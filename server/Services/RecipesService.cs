@@ -4,6 +4,8 @@
 
 
 
+using System.Security.Cryptography;
+
 namespace AllSpice.Services
 {
     public class RecipesService
@@ -38,6 +40,8 @@ namespace AllSpice.Services
             Recipe originalRecipe = GetRecipeById(recipeId);
 
             originalRecipe.Instructions = recipeData.Instructions ?? originalRecipe.Instructions;
+
+            _recipesRepository.UpdateRecipe(originalRecipe);
 
             return originalRecipe;
 
