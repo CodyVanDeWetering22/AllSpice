@@ -9,20 +9,16 @@ CREATE TABLE
     ) default charset utf8 COMMENT '';
 
 CREATE TABLE
-    IF NOT EXISTS recipes (
+    IF NOT EXISTS recipe (
         id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
         updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last Update',
         title VARCHAR(255) NOT NULL,
         instructions VARCHAR(255) NOT NULL,
-        img BLOB(1000) NOT NULL,
-        category ENUM(
-            "Pizza",
-            "Wings",
-            "Pasta",
-            "Burger",
-            "Steak"
-        ) NOT NULL -- FOREIGN KEY (creatorId) REFERENCES accounts(id)
+        img VARCHAR(1000) NOT NULL,
+        category VARCHAR(100) NOT NULL,
+        creatorId VARCHAR(255) NOT NULL,
+        FOREIGN KEY (creatorId) REFERENCES accounts(id) ON DELETE CASCADE
     ) default charset utf8 COMMENT '';
 
 INSERT INTO
