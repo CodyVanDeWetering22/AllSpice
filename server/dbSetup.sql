@@ -22,17 +22,12 @@ CREATE TABLE
     ) default charset utf8 COMMENT '';
 
 INSERT INTO
-    recipes(
+    recipe(
         title,
         instructions,
+        category,
         img,
         category
-    )
-VALUES (
-        "Fives Guys",
-        "Burger",
-        "https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D100089631741559&tbnid=_PYBUq7Y-teoqM&vet=12ahUKEwjN4JyHreqCAxWlJzQIHVzJDowQMygEegQIARB3..i&imgrefurl=https%3A%2F%2Fwww.facebook.com%2FFiveGuysMilwaukeeStBoiseID%2F&docid=C1rXthxndO-1ZM&w=771&h=771&q=fiveguys&ved=2ahUKEwjN4JyHreqCAxWlJzQIHVzJDowQMygEegQIARB3",
-        "Burger"
-    )
+    );
 
 DROP TABLE recipe;
